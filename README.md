@@ -85,8 +85,6 @@ flask_azidmart_api/
 ├── include/
 └── pyvenv.cfg
 
-text
-
 ## 🚀 Cara Instalasi & Menjalankan
 
 ### **Prasyarat:**
@@ -99,31 +97,28 @@ text
 
 1. **Clone repository:**
 
-```bash
+````bash
 git clone https://github.com/username/flask_azidmart_api.git
 cd flask_azidmart_api
-Buat virtual environment (recommended):
 
-bash
+2.Buat virtual environment (recommended):
 # Windows
 python -m venv venv
 venv\Scripts\activate
-
 # Mac/Linux
 python3 -m venv venv
 source venv/bin/activate
-Install dependencies:
 
-bash
+3. Install dependencies:
 pip install -r requirements.txt
-Jalankan aplikasi:
 
-bash
+4. Jalankan aplikasi:
 python app.py
-Buka browser:
 
-text
+5. Buka browser:
 http://localhost:5000
+
+
 📡 API Endpoints yang Digunakan
 AZIDMart menggunakan DummyJSON API dengan endpoint berikut:
 
@@ -133,121 +128,92 @@ Endpoint	Method	Deskripsi
 /products/categories	GET	Daftar semua kategori
 /products/category/{name}	GET	Produk berdasarkan kategori
 /products/search?q={query}	GET	Pencarian produk
-🎯 Fitur Implementasi Teknis
+
+
 1. Flask Routing System
-python
 @app.route('/products')
 def products():
     # Filter produk berdasarkan kategori & search
     category = request.args.get('category', 'all')
     search = request.args.get('search', '')
     # ... filter logic
+
 2. Dynamic Filtering
 Filter by kategori (electronics, fashion, home, dll)
-
 Real-time search dengan keyword matching
-
 URL parameter handling untuk bookmarkable filters
 
 3. Currency Conversion
-python
 # Konversi USD → IDR (1 USD = Rp 15.000)
 product['price_idr'] = product['price'] * 15000
-4. Template Inheritance
-html
+
+ 4. Inheritance
+```html
 <!-- base.html -->
 <div class="content">
     {{ content }}
 </div>
 
 <!-- products.html -->
-{% extends "base.html" %}
+<!-- Menggunakan extends untuk template inheritance -->
 <div class="products-page">
     <!-- konten produk -->
 </div>
+
 5. Error Handling
 Graceful degradation jika API down
-
 Custom error pages (404, 500)
-
 Image fallback system
 
 📊 Halaman yang Tersedia
 / - Dashboard dengan statistik
-
 /products - Katalog produk dengan filter
-
 /products?category=electronics - Filter by kategori
-
 /products?search=laptop - Search produk
-
 /product/{id} - Detail produk lengkap
-
 /categories - Overview semua kategori
-
 /about - Tentang project & tim
 
 🎨 Design System
 Color Palette:
 Primary: #1E3C72 (Dark Blue)
-
 Secondary: #2A5298 (Blue)
-
 Accent: #FFD700 (Gold)
-
 Background: #F8FAFC (Light Gray)
-
 Text: #1F2937 (Dark Gray)
-
 Typography:
 Headings: Segoe UI / Montserrat
-
 Body: Segoe UI / Open Sans
-
 Monospace: Consolas (code snippets)
-
 Animations:
 CSS3 transitions & transforms
-
 Hover effects pada product cards
-
 Gradient backgrounds dengan smooth transitions
 
 📝 Untuk Developer
 Menambahkan Fitur Baru:
 Tambah route baru di app.py
-
 Buat template HTML di templates/
-
 Update navigation di base.html jika perlu
-
 Test dengan python app.py
-
 Modifikasi Styling:
 Global styles di base.html block extra_css
-
 Page-specific styles di masing-masing template
-
 Gunakan Bootstrap utility classes untuk rapid styling
 
+
 Debugging:
-python
 # Enable debug mode
 app.run(debug=True)
-
 # Check logs di terminal
 # Flask akan show error details
+
 🤝 Kontribusi
 Project ini dibuat untuk tujuan akademik (UAS Web OOP). Untuk kontribusi:
-
 Fork repository
-
 Create feature branch (git checkout -b feature/AmazingFeature)
-
 Commit changes (git commit -m 'Add some AmazingFeature')
-
 Push to branch (git push origin feature/AmazingFeature)
-
 Open Pull Request
 
 👥 Tim Pengembang
@@ -260,8 +226,6 @@ Semester: Ganjil
 
 📄 License
 Project ini dilisensikan di bawah MIT License - lihat file LICENSE untuk detail.
-
-text
 MIT License
 
 Copyright (c) 2025 AZIDMart Team
@@ -273,13 +237,11 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 ...
+
 🙏 Acknowledgements
 DummyJSON - Untuk API produk gratis yang realistis
-
 Flask Documentation - Dokumentasi framework yang excellent
-
 Bootstrap Team - Untuk amazing CSS framework
-
 Bootstrap Icons - Untuk icon library yang gratis
 
 ❓ FAQ
@@ -299,26 +261,22 @@ Q: Bisa ditambah payment gateway?
 A: Ya, architecture siap untuk integrasi lebih lanjut.
 
 ⭐ Jika project ini membantu, beri star di GitHub!
-
 Happy Coding! 🚀
 
 🎯 Overview
 Flask + Bootstrap + DummyJSON API
-
 100+ produk real-time
-
 Filter & search system
-
 Responsive design
 
 🚀 Quick Start
-bash
 git clone [repo]
 cd flask_azidmart_api
 pip install -r requirements.txt
 python app.py
+
 📞 Contact
 Email: team@azidmart.dev
 GitHub: https://github.com/Zeppinhere30
-https://github.com/ziddan-mulia
-```
+        https://github.com/ziddan-mulia
+````
